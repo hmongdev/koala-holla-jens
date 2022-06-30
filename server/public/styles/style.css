@@ -1,0 +1,19 @@
+body {
+    font-family: sans-serif;
+}
+
+header {
+    background-color: rgb(0, 162, 255);
+    flex-flow: row wrap;
+    display: flex;
+    align-items:flex-start;
+}
+
+img{
+    width: 300px;
+    height: 300px;
+}
+
+.address {
+    padding: 50px;
+}
