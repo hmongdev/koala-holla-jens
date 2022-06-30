@@ -10,10 +10,9 @@ $( document ).ready( function(){
 }); // end doc ready
 
 function setupClickListeners() {
+  $('#viewKoalas').on('click', '#btn-transfer', markTransfer)
   $( '#addButton' ).on( 'click', function(){
-    console.log( 'in addButton on click' );
-    $('#viewKoalas').on('click', '#btn-transfer', markTransfer)
-    // get user input and put in an object
+    console.log( 'in addButton on click' );    // get user input and put in an object
     // NOT WORKING YET :(
     // using a test object
     let koalaToSend = {
