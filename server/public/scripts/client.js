@@ -12,7 +12,7 @@ $( document ).ready( function(){
 function setupClickListeners() {
   $( '#addButton' ).on( 'click', function(){
     console.log( 'in addButton on click' );
-    $('#viewKoalas').on('click', '#btn-transfer', markTransfer)
+    // $('#viewKoalas').on('click', '#btn-transfer', markTransfer)
     // get user input and put in an object
     // NOT WORKING YET :(
     // using a test object
@@ -26,6 +26,7 @@ function setupClickListeners() {
     // call saveKoala with the new obejct
     saveKoala( koalaToSend );
   });
+    $('#viewKoalas').on('click', '#btn-transfer', markTransfer)
 }
 
 function getKoalas(){
