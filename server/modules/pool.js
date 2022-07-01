@@ -4,6 +4,7 @@ const Pool = pg.Pool;
 
 // create a new pool instance to manage our connections
 const pool = new Pool({
+
   database: 'Koala-holla',
   host: 'localhost',
   port: 5432,
@@ -13,11 +14,11 @@ const pool = new Pool({
 
 // not required but useful for debugging
 pool.on('connect', () => {
-  console.log('Postgres connected! WOOOO');
+    console.log('Postgres connected! WOOOO');
 });
 
 pool.on('error', (error) => {
-  console.log('Error with postgres pool', error);
+    console.log('Error with postgres pool', error);
 });
 
 // allow access to this pool from other code
