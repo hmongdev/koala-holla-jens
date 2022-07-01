@@ -3,7 +3,7 @@ body {
 }
 
 header {
-    background-color: rgb(0, 162, 255);
+    background-color:  rgb(1, 130, 205);
     flex-flow: row wrap;
     display: flex;
     align-items:flex-start;
@@ -16,4 +16,22 @@ img{
 
 .address {
     padding: 50px;
+}
+
+table {
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid black;
+    width: 15%;
+    padding: 10px;
+}
+
+th{
+    background-color: rgb(1, 130, 205);
+    color: white;
+}
+
+tbody tr:nth-child(even){
+    background-color: rgb(198, 198, 198);;
 }
