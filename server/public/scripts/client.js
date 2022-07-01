@@ -13,8 +13,7 @@ function setupClickListeners() {
   
   $('#addButton').on('click', function () {
     console.log('in addButton on click');
-  $( '#addButton' ).on( 'click', function(){
-    console.log( 'in addButton on click' )
+  
 
     // get user input and put in an object
     // NOT WORKING YET :(
