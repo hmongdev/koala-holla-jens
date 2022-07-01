@@ -34,31 +34,31 @@ function getKoalas() {
 }
 
 //POST koala
-// function saveKoala() {
-//     // get user input and put in an object
-//     let newKoala = {
-//         name: $('#nameIn').val(),
-//         age: $('#ageIn').val(),
-//         gender: $('#genderIn').val(),
-//         readyForTransfer: $('#readyForTransferIn').val(),
-//         notes: $('#notesIn').val(),
-//     };
-//     console.log('in saveKoala', newKoala);
-//     // ajax call to server to get koalas
-//     $.ajax({
-//         type: 'POST',
-//         url: '/koalas',
-//         data: newKoala,
-//     })
-//         .then(function (response) {
-//             console.log('Response from server.', response);
-//             renderKoalas();
-//         })
-//         .catch(function (error) {
-//             console.log('Error in POST', error);
-//             alert('Unable to add koala at this time. Please try again later.');
-//         });
-// }
+function saveKoala() {
+    // get user input and put in an object
+    let newKoala = {
+        name: $('#nameIn').val(),
+        age: $('#ageIn').val(),
+        gender: $('#genderIn').val(),
+        readyForTransfer: $('#readyForTransferIn').val(),
+        notes: $('#notesIn').val(),
+    };
+    console.log('in saveKoala', newKoala);
+    // ajax call to server to get koalas
+    $.ajax({
+        type: 'POST',
+        url: '/new',
+        data: newKoala,
+    })
+        .then(function (response) {
+            console.log('Response from server.', response);
+            renderKoalas();
+        })
+        .catch(function (error) {
+            console.log('Error in POST', error);
+            alert('Unable to add koala at this time. Please try again later.');
+        });
+}
 
 //Render to DOM
 function renderKoalas(koalas) {
