@@ -6,8 +6,8 @@ const Pool = pg.Pool;
 const pool = new Pool({
   database: 'Koala-holla',
   host: 'localhost',
-  port: 5432, 
-  max: 10, 
+  port: 5432,
+  max: 10,
   idleTimeoutMillis: 30000,
 });
 
