@@ -1,6 +1,7 @@
 console.log('js');
 
 $(document).ready(function () {
+
     console.log('JQ');
     // Establish Click Listeners
     setupClickListeners();
@@ -59,6 +60,27 @@ function getKoalas() {
 //             alert('Unable to add koala at this time. Please try again later.');
 //         });
 // }
+
+function markTransfer() {
+  console.log('In markTransfer');
+  let koalasId = $(this).data('id');
+  let markTransfer = $(this).data('transfer');
+  //PUT request
+  $.ajax({
+    method: 'PUT',
+    url: `/koala/transfer/${koalasId}`,
+    data: { transfer: markTransfer },
+  })
+    .then(function () {
+      refreshBooks();
+      console.log('Finished markTransfer');
+    })
+    .catch(function (error) {
+      alert('ERRRRRRRROOOOR on markTransfer:', error);
+    });
+}
+function renderKoalas() {
+  $('viewKoalas').empty();
 
 //Render to DOM
 function renderKoalas(koalas) {
