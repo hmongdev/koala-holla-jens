@@ -79,9 +79,6 @@ function markTransfer() {
       alert('ERRRRRRRROOOOR on markTransfer:', error);
     });
 }
-function renderKoalas() {
-  $('viewKoalas').empty();
-
 //Render to DOM
 function renderKoalas(koalas) {
     //emptying the koala history
