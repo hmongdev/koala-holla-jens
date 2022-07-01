@@ -10,7 +10,6 @@ $(document).ready(function () {
 }); // end doc ready
 
 function setupClickListeners() {
-  
   $('#addButton').on('click', function () {
     console.log('in addButton on click');
     // get user input and put in an object
@@ -42,19 +41,19 @@ function markTransfer() {
   console.log('In markTransfer');
   let koalasId = $(this).data('id');
   let markTransfer = $(this).data('transfer');
-//PUT request
-$.ajax({
-  method: 'PUT',
-  url: `/koalas/transfer/${koalasId}`,
-  data: { transfer: markTransfer },
-})
-  .then(function () {
-    refreshBooks();
-    console.log('Finished markTransfer');
+  //PUT request
+  $.ajax({
+    method: 'PUT',
+    url: `/koala/transfer/${koalasId}`,
+    data: { transfer: markTransfer },
   })
-  .catch(function (error) {
-    alert('ERRRRRRRROOOOR on markTransfer:', error);
-  });
+    .then(function () {
+      refreshBooks();
+      console.log('Finished markTransfer');
+    })
+    .catch(function (error) {
+      alert('ERRRRRRRROOOOR on markTransfer:', error);
+    });
 }
 function renderKoalas() {
   $('viewKoalas').empty();

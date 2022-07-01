@@ -1,5 +1,5 @@
 const express = require('express');
-const koalaRouter = express.Router();
+const router = express.Router();
 const pool = require('../modules/pool');
 // DB CONNECTION
 
@@ -33,4 +33,4 @@ router.put('/transfer/:id', (req, res) => {
 
 // DELETE
 
-module.exports = koalaRouter;
+module.exports = router;
