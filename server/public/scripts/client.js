@@ -1,37 +1,36 @@
 console.log('js');
 
 $(document).ready(function () {
-
-    console.log('JQ');
-    // Establish Click Listeners
-    setupClickListeners();
-    //refresh if get new koalas
-    getKoalas();
-    // load existing koalas on page load
-    renderKoalas();
+  console.log('JQ');
+  // Establish Click Listeners
+  setupClickListeners();
+  //refresh if get new koalas
+  getKoalas();
+  // load existing koalas on page load
+  renderKoalas();
 }); // end doc ready
 
 function setupClickListeners() {
-    // $('#addButton').on('click', saveKoala);
-    // $('#viewKoalas').on('click', '#btn-transfer', markTransfer);
+  // $('#addButton').on('click', saveKoala);
+  // $('#viewKoalas').on('click', '#btn-transfer', markTransfer);
 }
 
 //GET koala
 function getKoalas() {
-    console.log('in getKoalas');
+  console.log('in getKoalas');
 
-    // ajax call to server to get koalas
-    $.ajax({
-        type: 'GET',
-        url: '/koalas',
+  // ajax call to server to get koalas
+  $.ajax({
+    type: 'GET',
+    url: '/koalas',
+  })
+    .then(function (response) {
+      console.log(response);
+      renderKoalas(response);
     })
-        .then(function (response) {
-            console.log(response);
-            renderKoalas(response);
-        })
-        .catch(function (error) {
-            console.log('error in GET', error);
-        });
+    .catch(function (error) {
+      console.log('error in GET', error);
+    });
 }
 
 //POST koala
@@ -81,16 +80,16 @@ function markTransfer() {
 }
 //Render to DOM
 function renderKoalas(koalas) {
-    //emptying the koala history
-    $('#viewKoalas').empty();
-    for (let i = 0; i < koalas.length; i += 1) {
-        // For each koala, append a new row to our table
-        $('#viewKoalas').append(`
+  //emptying the koala history
+  $('#viewKoalas').empty();
+  for (let i = 0; i < koalas.length; i += 1) {
+    // For each koala, append a new row to our table
+    $('#viewKoalas').append(`
       <tr>
         <td>${koalas[i].name}</td>
         <td>${koalas[i].age}</td>
         <td>${koalas[i].gender}</td>
-        <td>${koalas[i].readyForTransfer}</td>
+        <td>${koalas[i].ready_to_transer}</td>
         <td>${koalas[i].notes}</td>
         <td>
         <button data-id=${koalas[i].id}
@@ -99,5 +98,5 @@ function renderKoalas(koalas) {
         </td>
       </tr>
     `);
-    }
+  }
 }
